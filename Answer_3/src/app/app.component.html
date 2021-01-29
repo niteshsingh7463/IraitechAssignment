@@ -1,0 +1,24 @@
+<div class="container ml-5">
+    <div class="row">
+        <div class="col-12">
+            <form action="" [formGroup]="nestedForm" (ngSubmit)="submitFun()">
+                <!-- =========================nested form================================= -->
+                <div class="row mt-3 " formArrayName="arrayPhNumbers">
+                    <div class="col-12 mt-1" *ngFor="let group of phNumbersArray.controls;index as i" [formGroupName]="i">
+                        <div class="row">
+                            <div class="col-8"> <input type="text" class="form-control" formControlName="addPhNumber"></div>
+
+                            <div class="col-1"><button class="btn btn-danger btn-sm " (click)="removeBtn(i)" style="margin-top:2px ;">x</button></div>
+
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary mt-4" type="submit">Submit</button>
+            </form>
+
+            <button class="btn btn-success mt-4" (click)="addPhNumberBtn()">Add Ingredient</button><br>
+
+
+        </div>
+    </div>
+</div>
